@@ -247,7 +247,7 @@ function updateParallax() {
     if (formWrapper) {
         const rotateX = (window.innerHeight / 2 - window.event.clientY) / 50;
         const rotateY = (window.event.clientX - window.innerWidth / 2) / 50;
-        formWrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(${window.innerWidth < 768 ? -210 : 0}px)`;
+        formWrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(${window.innerWidth < 768 ? -170 : 0}px)`;
     }
 }
 
@@ -260,7 +260,7 @@ function initInteractions() {
         el.style.transition = `all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${0.2 + i * 0.1}s`;
         setTimeout(() => {
             el.style.opacity = '1';
-            el.style.transform = window.innerWidth < 768 && el.classList.contains('form-wrapper') ? 'translateY(-210px)' : 'translateY(0)';
+            el.style.transform = window.innerWidth < 768 && el.classList.contains('form-wrapper') ? 'translateY(-170px)' : 'translateY(0)';
         }, 100);
     });
 
@@ -298,11 +298,38 @@ function initFormHandling() {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         btn.classList.add('loading');
-        await new Promise(r => setTimeout(r, 1500));
-        form.style.display = 'none';
-        document.querySelector('.form-header').style.display = 'none';
-        document.getElementById('successMessage').classList.add('show');
-        btn.classList.remove('loading');
+        
+        const formData = {
+            name: document.getElementById('nameInput').value,
+            phone: document.getElementById('phoneInput').value,
+            message: document.getElementById('problemInput').value
+        };
+
+        try {
+            const response = await fetch('/.netlify/functions/send-to-crm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+
+            if (response.ok) {
+                form.style.display = 'none';
+                document.querySelector('.form-header').style.display = 'none';
+                document.getElementById('successMessage').classList.add('show');
+            } else {
+                console.error('CRM Error:', result);
+                alert('Xabarni yuborishda xatolik yuz berdi. Iltimos qaytadan urinib ko\'ring yoki admin bilan bog\'laning.');
+            }
+        } catch (error) {
+            console.error('Network Error:', error);
+            alert('Internet aloqasini tekshiring.');
+        } finally {
+            btn.classList.remove('loading');
+        }
     });
     document.getElementById('resetBtn').addEventListener('click', () => {
         form.reset(); form.style.display = 'flex';

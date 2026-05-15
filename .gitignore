@@ -12,3 +12,6 @@ Thumbs.db
 node_modules/
 .antigravity/
 .gemini/
+
+# Local Netlify folder
+.netlify
