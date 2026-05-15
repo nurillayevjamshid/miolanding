@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MIO Beauty - Go'zallik saloni. Biz bilan bog'laning va muammolaringizni hal qiling.">
+    <title>MIO Beauty - Biz bilan bog'laning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/geometria" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dynamic animated background -->
+    <div class="bg-dynamic" id="bgDynamic">
+        <canvas id="bgCanvas"></canvas>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-4"></div>
+        <div class="gradient-orb orb-5"></div>
+        <div class="shimmer-layer"></div>
+    </div>
+
+    <!-- Mobile branding (shown only on mobile) -->
+    <div class="mobile-brand" id="mobileBrand">
+        <div class="mobile-brand-content">
+            <div class="text-logo">
+                <span class="logo-mio">MIO</span>
+                <span class="logo-beauty">BEAUTY</span>
+            </div>
+            <div class="brand-tagline">
+                <div class="tagline-line"></div>
+                <p class="tagline-text">Go'zallik — MIO bilan!</p>
+                <p class="tagline-sub">Professional xizmatlar va individual yondashuv</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="landing-container">
+        <!-- LEFT SIDE - Branding -->
+        <section class="brand-section" id="brandSection">
+            <div class="brand-content">
+                <div class="logo-wrapper" id="logoWrapper">
+                    <div class="text-logo">
+                        <span class="logo-mio">MIO</span>
+                        <span class="logo-beauty">BEAUTY</span>
+                    </div>
+                </div>
+                <div class="brand-tagline">
+                    <div class="tagline-line"></div>
+                    <p class="tagline-text">Go'zallik — MIO bilan!</p>
+                    <p class="tagline-sub">Professional xizmatlar va individual yondashuv</p>
+                </div>
+                <div class="brand-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                <path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">Professional mutaxassislar</span>
+                            <span class="feature-desc">10+ yillik tajriba</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">Zamonaviy uskunalar</span>
+                            <span class="feature-desc">Premium sifatli jihozlar</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">Kafolatli natija</span>
+                            <span class="feature-desc">100% mijoz mamnuniyati</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT SIDE - Contact Form -->
+        <section class="form-section" id="formSection">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <span class="form-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Aloqa
+                    </span>
+                    <h1 id="formTitle">Biz bilan bog'laning</h1>
+                    <p class="form-subtitle">Ma'lumotlaringizni qoldiring, biz siz bilan tez orada bog'lanamiz</p>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="input-group" id="nameGroup">
+                        <label for="nameInput" class="input-label">Ismingiz</label>
+                        <div class="input-wrapper">
+                            <div class="input-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <input type="text" id="nameInput" name="name" placeholder="Ismingizni kiriting" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="phoneGroup">
+                        <label for="phoneInput" class="input-label">Telefon raqamingiz</label>
+                        <div class="input-wrapper">
+                            <div class="input-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <input type="tel" id="phoneInput" name="phone" placeholder="+998 __ ___ __ __" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="problemGroup">
+                        <label for="problemInput" class="input-label">Muammongiz</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <div class="input-icon-box textarea-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5z"/>
+                                    <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>
+                                </svg>
+                            </div>
+                            <textarea id="problemInput" name="problem" placeholder="Muammongizni batafsil yozing..." rows="4" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Yuborish</span>
+                        <span class="btn-loader" id="btnLoader">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20"/>
+                            </svg>
+                        </span>
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Success message -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h2>Xabaringiz yuborildi!</h2>
+                    <p>Tez orada siz bilan bog'lanamiz</p>
+                    <button type="button" class="reset-btn" id="resetBtn">Yana yuborish</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-centered-content">
+                <div class="footer-logo">
+                    <span class="logo-mio">MIO</span>
+                    <span class="logo-beauty">BEAUTY</span>
+                </div>
+                
+                <div class="footer-divider-h"></div>
+                
+                <p class="copyright">&copy; 2022 MIO Beauty. Barcha huquqlar himoyalangan.</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/miobeautyuz/" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://t.me/miobeautyofficial" aria-label="Telegram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@miobeauty_uz" aria-label="YouTube">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.42 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.42-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+                
+                <p class="footer-support">Yordam: <a href="https://t.me/miobeautyadmin">MIO Beauty Admin</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
