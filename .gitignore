@@ -1,0 +1,14 @@
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project files
+*.log
+node_modules/
+.antigravity/
+.gemini/
