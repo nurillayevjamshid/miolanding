@@ -849,7 +849,7 @@ body {
     .form-section {
         padding: 0 20px 0;
         min-height: auto;
-        margin-top: -170px;
+        margin-top: -130px;
     }
 
     .form-section::before { display: none; }
