@@ -819,7 +819,7 @@ body {
     }
 
     .mobile-brand .text-logo {
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 
     .mobile-brand .logo-mio {
@@ -846,7 +846,7 @@ body {
     .form-section {
         padding: 0 20px 0;
         min-height: auto;
-        margin-top: -130px;
+        margin-top: 1.5cm;
     }
 
     .form-section::before { display: none; }
@@ -883,8 +883,8 @@ body {
 
 @media (max-width: 380px) {
     .mobile-brand {
-        padding: 50px 24px;
-        min-height: 80vh;
+        padding: 20px 24px 0;
+        min-height: auto;
     }
 
     .mobile-brand .logo-mio { font-size: 4rem; }
