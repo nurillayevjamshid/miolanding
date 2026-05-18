@@ -25,12 +25,16 @@ exports.handler = async (event, context) => {
     // 1. Google Sheets Integratsiyasi
     if (GOOGLE_SHEETS_URL) {
       try {
+        // Google Sheets telefondagi "+" belgisini va bo'shliqlarni matematika formulasi deb o'ylamasligi uchun
+        // telefon raqami boshiga (') belgisini qo'shib matn formatiga o'tkazamiz.
+        const formattedPhone = phone && phone.startsWith('+') ? `'${phone}` : phone;
+
         const googleResponse = await fetch(GOOGLE_SHEETS_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, phone, message }),
+          body: JSON.stringify({ name, phone: formattedPhone, message }),
         });
         
         if (googleResponse.ok) {
