@@ -320,6 +320,11 @@ function initFormHandling() {
                 form.style.display = 'none';
                 document.querySelector('.form-header').style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');
+                
+                // Automatically redirect to Telegram channel after a short delay
+                setTimeout(() => {
+                    window.location.href = 'https://t.me/miobeauty';
+                }, 1000);
             } else {
                 console.error('CRM Error:', result);
                 alert('Xabarni yuborishda xatolik yuz berdi. Iltimos qaytadan urinib ko\'ring yoki admin bilan bog\'laning.');
