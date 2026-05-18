@@ -832,10 +832,7 @@ body {
     }
 
     .mobile-brand .brand-tagline {
-        animation: none;
-        opacity: 1;
-        transform: none;
-        margin-bottom: 0;
+        display: none;
     }
 
     .mobile-brand .tagline-text {
